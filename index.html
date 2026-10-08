@@ -1,247 +1,336 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>راهینو | هر کاری داری، راهش رو پیدا کن</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<title>راهینو | هر کاری داری، راهش رو پیدا کن</title>
 
-    body {
-      background: #f5f7fb;
-      color: #172033;
-    }
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
+}
 
-    header {
-      background: #ffffff;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #e5e7eb;
-    }
+body{
+background:#f5f7fb;
+color:#172033;
+}
 
-    .logo {
-      font-size: 32px;
-      font-weight: bold;
-      color: #2563eb;
-    }
+header{
+background:white;
+padding:22px 15px;
+text-align:center;
+border-bottom:1px solid #e5e7eb;
+}
 
-    .tagline {
-      margin-top: 8px;
-      color: #667085;
-      font-size: 16px;
-    }
+.logo{
+font-size:34px;
+font-weight:bold;
+color:#2563eb;
+}
 
-    .hero {
-      padding: 45px 20px 30px;
-      text-align: center;
-    }
+.tagline{
+margin-top:8px;
+color:#667085;
+font-size:16px;
+}
 
-    .hero h1 {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
+.hero{
+padding:45px 20px 30px;
+text-align:center;
+}
 
-    .hero p {
-      color: #667085;
-      font-size: 17px;
-      line-height: 1.8;
-    }
+.hero h1{
+font-size:30px;
+margin-bottom:14px;
+}
 
-    .search {
-      max-width: 600px;
-      margin: 25px auto;
-      display: flex;
-      gap: 10px;
-    }
+.hero p{
+color:#667085;
+font-size:17px;
+line-height:1.8;
+}
 
-    .search input {
-      flex: 1;
-      padding: 16px;
-      border: 1px solid #d0d5dd;
-      border-radius: 14px;
-      font-size: 16px;
-      text-align: right;
-    }
+.search{
+max-width:650px;
+margin:25px auto;
+display:flex;
+gap:10px;
+}
 
-    .search button,
-    .request-btn {
-      background: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 14px;
-      padding: 15px 22px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+.search input{
+flex:1;
+padding:16px;
+border:1px solid #d0d5dd;
+border-radius:14px;
+font-size:16px;
+text-align:right;
+}
 
-    .categories {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-    }
+button{
+background:#2563eb;
+color:white;
+border:none;
+border-radius:14px;
+padding:15px 22px;
+font-size:16px;
+cursor:pointer;
+}
 
-    .categories h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+.categories{
+max-width:900px;
+margin:20px auto;
+padding:20px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
+.categories h2{
+text-align:center;
+margin-bottom:20px;
+}
 
-    .category {
-      background: white;
-      border: 1px solid #e4e7ec;
-      border-radius: 16px;
-      padding: 22px 10px;
-      text-align: center;
-      font-size: 17px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
 
-    .category:hover {
-      transform: translateY(-2px);
-      border-color: #2563eb;
-    }
+.category{
+background:white;
+border:1px solid #e4e7ec;
+border-radius:16px;
+padding:22px 10px;
+text-align:center;
+font-size:17px;
+cursor:pointer;
+}
 
-    .request {
-      text-align: center;
-      padding: 30px 20px 50px;
-    }
+.request{
+max-width:650px;
+margin:20px auto;
+padding:30px 20px 50px;
+text-align:center;
+}
 
-    .request h2 {
-      margin-bottom: 15px;
-    }
+.form-box{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
 
-    footer {
-      background: #172033;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      line-height: 1.8;
-    }
+.form-box h2{
+margin-bottom:20px;
+}
 
-    @media (min-width: 700px) {
-      .grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-  </style>
+.form-box input,
+.form-box select,
+.form-box textarea{
+width:100%;
+padding:15px;
+margin-bottom:12px;
+border:1px solid #d0d5dd;
+border-radius:12px;
+font-size:16px;
+text-align:right;
+}
+
+.form-box textarea{
+height:120px;
+resize:none;
+}
+
+.success{
+display:none;
+background:#ecfdf3;
+color:#027a48;
+padding:18px;
+border-radius:14px;
+margin-top:15px;
+line-height:1.8;
+}
+
+footer{
+background:#172033;
+color:white;
+text-align:center;
+padding:25px;
+line-height:1.8;
+}
+
+@media(min-width:700px){
+.grid{
+grid-template-columns:repeat(4,1fr);
+}
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">راهینو</div>
-    <div class="tagline">هر کاری داری، راهش رو پیدا کن</div>
-  </header>
+<header>
+<div class="logo">راهینو</div>
+<div class="tagline">هر کاری داری، راهش رو پیدا کن</div>
+</header>
 
-  <section class="hero">
-    <h1>کارت رو بسپار به راهینو</h1>
-    <p>
-      نیازت رو بگو، متخصص مناسب رو پیدا کن و با خیال راحت انتخاب کن.
-    </p>
+<section class="hero">
 
-    <div class="search">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="مثلاً تعمیرکار، برنامه‌نویس، طراح..."
-      >
-      <button onclick="search()">جستجو</button>
-    </div>
-  </section>
+<h1>کارت رو بسپار به راهینو</h1>
 
-  <section class="categories">
-    <h2>چه کاری داری؟</h2>
+<p>
+نیازت رو بگو، متخصص مناسب رو پیدا کن و با خیال راحت انتخاب کن.
+</p>
 
-    <div class="grid">
+<div class="search">
 
-      <div class="category" onclick="selectCategory('تعمیرات')">
-        🔧 تعمیرات
-      </div>
+<input
+id="searchInput"
+type="text"
+placeholder="مثلاً تعمیرکار، برنامه‌نویس، طراح..."
+>
 
-      <div class="category" onclick="selectCategory('ساختمان')">
-        🏠 ساختمان
-      </div>
+<button onclick="search()">جستجو</button>
 
-      <div class="category" onclick="selectCategory('برنامه‌نویسی')">
-        💻 برنامه‌نویسی
-      </div>
+</div>
 
-      <div class="category" onclick="selectCategory('طراحی')">
-        🎨 طراحی
-      </div>
+</section>
 
-      <div class="category" onclick="selectCategory('آموزش')">
-        📚 آموزش
-      </div>
+<section class="categories">
 
-      <div class="category" onclick="selectCategory('حمل و نقل')">
-        🚚 حمل‌ونقل
-      </div>
+<h2>چه کاری داری؟</h2>
 
-      <div class="category" onclick="selectCategory('خدمات منزل')">
-        🏡 خدمات منزل
-      </div>
+<div class="grid">
 
-      <div class="category" onclick="selectCategory('سایر')">
-        ✨ سایر خدمات
-      </div>
+<div class="category" onclick="selectCategory('تعمیرات')">🔧 تعمیرات</div>
 
-    </div>
-  </section>
+<div class="category" onclick="selectCategory('ساختمان')">🏠 ساختمان</div>
 
-  <section class="request">
-    <h2>کار موردنظرت رو پیدا نکردی؟</h2>
-    <p style="margin-bottom:18px;color:#667085;">
-      درخواستت رو ثبت کن تا راهینو راهش رو برات پیدا کنه.
-    </p>
+<div class="category" onclick="selectCategory('برنامه‌نویسی')">💻 برنامه‌نویسی</div>
 
-    <button class="request-btn" onclick="createRequest()">
-      ثبت درخواست
-    </button>
-  </section>
+<div class="category" onclick="selectCategory('طراحی')">🎨 طراحی</div>
 
-  <footer>
-    راهینو — هر کاری داری، راهش رو پیدا کن
-    <br>
-    نسخه اولیه MVP
-  </footer>
+<div class="category" onclick="selectCategory('آموزش')">📚 آموزش</div>
 
-  <script>
-    function search() {
-      const value = document.getElementById("searchInput").value.trim();
+<div class="category" onclick="selectCategory('حمل و نقل')">🚚 حمل‌ونقل</div>
 
-      if (!value) {
-        alert("لطفاً کاری که نیاز داری را وارد کن.");
-        return;
-      }
+<div class="category" onclick="selectCategory('خدمات منزل')">🏡 خدمات منزل</div>
 
-      alert("درخواست شما برای «" + value + "» ثبت شد.");
-    }
+<div class="category" onclick="selectCategory('سایر')">✨ سایر خدمات</div>
 
-    function selectCategory(category) {
-      document.getElementById("searchInput").value = category;
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
+</div>
 
-    function createRequest() {
-      alert("فرم ثبت درخواست در مرحله بعد به راهینو اضافه می‌شود.");
-    }
-  </script>
+</section>
+
+<section class="request">
+
+<div class="form-box">
+
+<h2>📋 ثبت درخواست</h2>
+
+<input id="name" type="text" placeholder="نام شما">
+
+<input id="phone" type="tel" placeholder="شماره موبایل">
+
+<select id="category">
+<option value="">انتخاب دسته‌بندی</option>
+<option>تعمیرات</option>
+<option>ساختمان</option>
+<option>برنامه‌نویسی</option>
+<option>طراحی</option>
+<option>آموزش</option>
+<option>حمل و نقل</option>
+<option>خدمات منزل</option>
+<option>سایر خدمات</option>
+</select>
+
+<textarea
+id="description"
+placeholder="چه کاری نیاز داری؟ درخواستت رو کامل توضیح بده..."
+></textarea>
+
+<button onclick="createRequest()">
+ثبت درخواست
+</button>
+
+<div id="success" class="success">
+✅ درخواستت با موفقیت ثبت شد.
+<br>
+راهینو به‌زودی مسیر مناسب انجام کارت رو پیدا می‌کنه.
+</div>
+
+</div>
+
+</section>
+
+<footer>
+راهینو — هر کاری داری، راهش رو پیدا کن
+<br>
+نسخه اولیه MVP
+</footer>
+
+<script>
+
+function search(){
+
+const value=document.getElementById("searchInput").value.trim();
+
+if(!value){
+alert("لطفاً کاری که نیاز داری را وارد کن.");
+return;
+}
+
+document.getElementById("description").value=value;
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+function selectCategory(category){
+
+document.getElementById("searchInput").value=category;
+
+document.getElementById("category").value=category;
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+function createRequest(){
+
+const name=document.getElementById("name").value.trim();
+const phone=document.getElementById("phone").value.trim();
+const category=document.getElementById("category").value;
+const description=document.getElementById("description").value.trim();
+
+if(!name || !phone || !category || !description){
+
+alert("لطفاً همه اطلاعات درخواست را کامل کن.");
+
+return;
+
+}
+
+localStorage.setItem("rahino_request",JSON.stringify({
+name:name,
+phone:phone,
+category:category,
+description:description,
+date:new Date().toLocaleString("fa-IR")
+}));
+
+document.getElementById("success").style.display="block";
+
+}
+
+</script>
 
 </body>
 </html>
