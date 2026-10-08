@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>راهینو | هر کاری داری، راهش رو پیدا کن</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    .tagline {
+      margin-top: 8px;
+      color: #667085;
+      font-size: 16px;
+    }
+
+    .hero {
+      padding: 45px 20px 30px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #667085;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .search {
+      max-width: 600px;
+      margin: 25px auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search input {
+      flex: 1;
+      padding: 16px;
+      border: 1px solid #d0d5dd;
+      border-radius: 14px;
+      font-size: 16px;
+      text-align: right;
+    }
+
+    .search button,
+    .request-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 15px 22px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .categories {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .categories h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .category {
+      background: white;
+      border: 1px solid #e4e7ec;
+      border-radius: 16px;
+      padding: 22px 10px;
+      text-align: center;
+      font-size: 17px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .category:hover {
+      transform: translateY(-2px);
+      border-color: #2563eb;
+    }
+
+    .request {
+      text-align: center;
+      padding: 30px 20px 50px;
+    }
+
+    .request h2 {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #172033;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      line-height: 1.8;
+    }
+
+    @media (min-width: 700px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">راهینو</div>
+    <div class="tagline">هر کاری داری، راهش رو پیدا کن</div>
+  </header>
+
+  <section class="hero">
+    <h1>کارت رو بسپار به راهینو</h1>
+    <p>
+      نیازت رو بگو، متخصص مناسب رو پیدا کن و با خیال راحت انتخاب کن.
+    </p>
+
+    <div class="search">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="مثلاً تعمیرکار، برنامه‌نویس، طراح..."
+      >
+      <button onclick="search()">جستجو</button>
+    </div>
+  </section>
+
+  <section class="categories">
+    <h2>چه کاری داری؟</h2>
+
+    <div class="grid">
+
+      <div class="category" onclick="selectCategory('تعمیرات')">
+        🔧 تعمیرات
+      </div>
+
+      <div class="category" onclick="selectCategory('ساختمان')">
+        🏠 ساختمان
+      </div>
+
+      <div class="category" onclick="selectCategory('برنامه‌نویسی')">
+        💻 برنامه‌نویسی
+      </div>
+
+      <div class="category" onclick="selectCategory('طراحی')">
+        🎨 طراحی
+      </div>
+
+      <div class="category" onclick="selectCategory('آموزش')">
+        📚 آموزش
+      </div>
+
+      <div class="category" onclick="selectCategory('حمل و نقل')">
+        🚚 حمل‌ونقل
+      </div>
+
+      <div class="category" onclick="selectCategory('خدمات منزل')">
+        🏡 خدمات منزل
+      </div>
+
+      <div class="category" onclick="selectCategory('سایر')">
+        ✨ سایر خدمات
+      </div>
+
+    </div>
+  </section>
+
+  <section class="request">
+    <h2>کار موردنظرت رو پیدا نکردی؟</h2>
+    <p style="margin-bottom:18px;color:#667085;">
+      درخواستت رو ثبت کن تا راهینو راهش رو برات پیدا کنه.
+    </p>
+
+    <button class="request-btn" onclick="createRequest()">
+      ثبت درخواست
+    </button>
+  </section>
+
+  <footer>
+    راهینو — هر کاری داری، راهش رو پیدا کن
+    <br>
+    نسخه اولیه MVP
+  </footer>
+
+  <script>
+    function search() {
+      const value = document.getElementById("searchInput").value.trim();
+
+      if (!value) {
+        alert("لطفاً کاری که نیاز داری را وارد کن.");
+        return;
+      }
+
+      alert("درخواست شما برای «" + value + "» ثبت شد.");
+    }
+
+    function selectCategory(category) {
+      document.getElementById("searchInput").value = category;
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    function createRequest() {
+      alert("فرم ثبت درخواست در مرحله بعد به راهینو اضافه می‌شود.");
+    }
+  </script>
+
+</body>
+</html>
