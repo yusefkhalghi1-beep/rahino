@@ -2,335 +2,592 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>راهینو | هر کاری داری، راهش رو پیدا کن</title>
-
 <style>
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-font-family:Arial,sans-serif;
-}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;background:#f4f7fb;color:#14213d}
+.header{position:sticky;top:0;z-index:20;box-shadow:0 4px 18px rgba(20,33,61,.06)}
+.logo{letter-spacing:-.5px}
+.hero{background:linear-gradient(135deg,#14213d 0%,#1d4ed8 100%);box-shadow:0 14px 35px rgba(29,78,216,.18)}
+.hero h1{letter-spacing:-1px}
+.section h2{letter-spacing:-.3px}
+.cat{transition:.18s;cursor:pointer}
+.cat:hover{transform:translateY(-2px);border-color:#2563eb;box-shadow:0 7px 18px rgba(37,99,235,.10)}
+.cta{box-shadow:0 7px 22px rgba(20,33,61,.06)}
+.primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);cursor:pointer}
+.login{cursor:pointer}
 
-body{
-background:#f5f7fb;
-color:#172033;
-}
+.header{background:#fff;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee}
+.logo{font-size:27px;font-weight:800}.logo span{font-size:13px;display:block;color:#697386;font-weight:500}
+.login{border:0;background:#172033;color:#fff;padding:10px 16px;border-radius:12px;font-size:14px}
+.hero{margin:18px;background:#172033;color:#fff;border-radius:24px;padding:30px 22px;text-align:center}
+.hero h1{font-size:30px;margin:0 0 10px}.hero p{color:#d8deea;margin:0 0 22px}
+.search{background:#fff;border-radius:15px;padding:5px;display:flex;gap:6px}
+.search input{border:0;outline:0;flex:1;padding:13px;font-size:15px;direction:rtl}
+.search button,.primary{border:0;background:#2563eb;color:#fff;border-radius:11px;padding:12px 18px;font-weight:700}
+.section{padding:0 18px}.section h2{font-size:20px;margin:25px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+.cat{background:#fff;border:1px solid #edf0f5;border-radius:16px;padding:18px 12px;text-align:center;font-size:15px;font-weight:650;box-shadow:0 2px 10px #17203308}
+.cat b{display:block;font-size:28px;margin-bottom:7px}
+.cta{margin:25px 18px;background:#fff;border:1px solid #e9edf4;border-radius:20px;padding:20px}
+.cta h3{margin:0 0 7px}.cta p{margin:0 0 15px;color:#697386;font-size:14px}
+.primary{width:100%;font-size:15px}
+label{display:block;margin:13px 0 6px;font-size:13px;font-weight:700}
+.account-card{background:#fff;border:1px solid #e7ebf2;border-radius:17px;padding:15px}
 
-header{
-background:white;
-padding:22px 15px;
-text-align:center;
-border-bottom:1px solid #e5e7eb;
-}
-
-.logo{
-font-size:34px;
-font-weight:bold;
-color:#2563eb;
-}
-
-.tagline{
-margin-top:8px;
-color:#667085;
-font-size:16px;
-}
-
-.hero{
-padding:45px 20px 30px;
-text-align:center;
-}
-
-.hero h1{
-font-size:30px;
-margin-bottom:14px;
-}
-
-.hero p{
-color:#667085;
-font-size:17px;
-line-height:1.8;
-}
-
-.search{
-max-width:650px;
-margin:25px auto;
-display:flex;
-gap:10px;
-}
-
-.search input{
-flex:1;
-padding:16px;
-border:1px solid #d0d5dd;
-border-radius:14px;
-font-size:16px;
-text-align:right;
-}
-
-button{
-background:#2563eb;
-color:white;
-border:none;
-border-radius:14px;
-padding:15px 22px;
-font-size:16px;
-cursor:pointer;
-}
-
-.categories{
-max-width:900px;
-margin:20px auto;
-padding:20px;
-}
-
-.categories h2{
-text-align:center;
-margin-bottom:20px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-}
-
-.category{
-background:white;
-border:1px solid #e4e7ec;
-border-radius:16px;
-padding:22px 10px;
-text-align:center;
-font-size:17px;
-cursor:pointer;
-}
-
-.request{
-max-width:650px;
-margin:20px auto;
-padding:30px 20px 50px;
-text-align:center;
-}
-
-.form-box{
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
-
-.form-box h2{
-margin-bottom:20px;
-}
-
-.form-box input,
-.form-box select,
-.form-box textarea{
-width:100%;
-padding:15px;
-margin-bottom:12px;
-border:1px solid #d0d5dd;
-border-radius:12px;
-font-size:16px;
-text-align:right;
-}
-
-.form-box textarea{
-height:120px;
-resize:none;
-}
-
-.success{
-display:none;
-background:#ecfdf3;
-color:#027a48;
-padding:18px;
-border-radius:14px;
-margin-top:15px;
-line-height:1.8;
-}
-
-footer{
-background:#172033;
-color:white;
-text-align:center;
-padding:25px;
-line-height:1.8;
-}
-
-@media(min-width:700px){
-.grid{
-grid-template-columns:repeat(4,1fr);
-}
-}
+.spec{background:#fff;border:1px solid #e7ebf2;border-radius:17px;padding:16px;margin:11px 0;box-shadow:0 2px 10px #17203308}
+.spec-top{display:flex;justify-content:space-between;align-items:center}
+.spec-name{font-weight:800;font-size:16px}.rating{font-size:13px}
+.spec-meta{color:#697386;font-size:12px;margin:7px 0 12px}
+.choose{width:100%;border:0;background:#172033;color:#fff;padding:11px;border-radius:11px;font-family:inherit;font-weight:700}
+.field{width:100%;border:1px solid #e1e6ef;background:#fafbfe;border-radius:11px;padding:12px;font-size:14px;outline:0;font-family:inherit}
+.field:focus{border-color:#2563eb;background:#fff}
+textarea{resize:vertical}.success{display:none;margin-top:15px;padding:13px;border-radius:12px;background:#ecfdf3;color:#16734a;font-size:13px;line-height:1.8}
+footer{text-align:center;color:#64748b;font-size:12px;padding:30px 18px}
+footer strong{display:block;color:#14213d;font-size:16px;margin-bottom:5px}
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-
 <body>
-
-<header>
-<div class="logo">راهینو</div>
-<div class="tagline">هر کاری داری، راهش رو پیدا کن</div>
+<header class="header">
+  <div class="logo">راهینو<span>هر کاری داری، راهش رو پیدا کن</span></div>
+  <button class="login">ورود / ثبت‌نام</button>
 </header>
+<div style="background:#fff;text-align:center;padding:9px 14px;border-bottom:1px solid #eef1f5;color:#64748b;font-size:12px">
+  راهینو؛ وصل‌کننده‌ی آدم‌ها به متخصص‌های مناسب
+</div>
+
 
 <section class="hero">
-
-<h1>کارت رو بسپار به راهینو</h1>
-
-<p>
-نیازت رو بگو، متخصص مناسب رو پیدا کن و با خیال راحت انتخاب کن.
-</p>
-
-<div class="search">
-
-<input
-id="searchInput"
-type="text"
-placeholder="مثلاً تعمیرکار، برنامه‌نویس، طراح..."
->
-
-<button onclick="search()">جستجو</button>
-
-</div>
-
+  <h1>هر کاری داری، راهش رو پیدا کن</h1>
+  <p>نیازت رو بگو؛ راهینو متخصص مناسب رو پیدا می‌کنه.</p>
+  <div class="search">
+    <input id="q" placeholder="مثلاً تعمیر کولر، طراحی سایت..." />
+    <button onclick="search()">جستجو</button>
+  </div>
 </section>
 
-<section class="categories">
 
-<h2>چه کاری داری؟</h2>
-
-<div class="grid">
-
-<div class="category" onclick="selectCategory('تعمیرات')">🔧 تعمیرات</div>
-
-<div class="category" onclick="selectCategory('ساختمان')">🏠 ساختمان</div>
-
-<div class="category" onclick="selectCategory('برنامه‌نویسی')">💻 برنامه‌نویسی</div>
-
-<div class="category" onclick="selectCategory('طراحی')">🎨 طراحی</div>
-
-<div class="category" onclick="selectCategory('آموزش')">📚 آموزش</div>
-
-<div class="category" onclick="selectCategory('حمل و نقل')">🚚 حمل‌ونقل</div>
-
-<div class="category" onclick="selectCategory('خدمات منزل')">🏡 خدمات منزل</div>
-
-<div class="category" onclick="selectCategory('سایر')">✨ سایر خدمات</div>
-
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 18px;margin:20px 0 4px">
+  <div style="background:#fff;border-radius:14px;padding:12px 6px;text-align:center;font-size:11px;color:#64748b"><b style="display:block;color:#14213d;font-size:18px">⚡</b>سریع</div>
+  <div style="background:#fff;border-radius:14px;padding:12px 6px;text-align:center;font-size:11px;color:#64748b"><b style="display:block;color:#14213d;font-size:18px">⭐</b>متخصص</div>
+  <div style="background:#fff;border-radius:14px;padding:12px 6px;text-align:center;font-size:11px;color:#64748b"><b style="display:block;color:#14213d;font-size:18px">🤝</b>مطمئن</div>
 </div>
 
+<section class="section">
+  <h2>چه کاری لازم داری؟</h2>
+  <div class="grid">
+    <div class="cat" onclick="choose('تعمیرات')"><b>🔧</b>تعمیرات</div>
+    <div class="cat" onclick="choose('خدمات منزل')"><b>🏠</b>خدمات منزل</div>
+    <div class="cat" onclick="choose('خودرو')"><b>🚗</b>خودرو</div>
+    <div class="cat" onclick="choose('کامپیوتر و موبایل')"><b>💻</b>کامپیوتر و موبایل</div>
+    <div class="cat" onclick="choose('طراحی و تبلیغات')"><b>🎨</b>طراحی و تبلیغات</div>
+    <div class="cat" onclick="choose('آموزش')"><b>📚</b>آموزش</div>
+    <div class="cat" onclick="choose('حمل‌ونقل')"><b>🚚</b>حمل‌ونقل</div>
+    <div class="cat" onclick="choose('سایر')"><b>➕</b>سایر</div>
+  </div>
 </section>
 
-<section class="request">
+<section class="cta" id="requestBox">
+  <h3>ثبت درخواست جدید</h3>
+  <p>جزئیات کارت رو بنویس تا درخواستت برای متخصص مناسب آماده بشه.</p>
 
-<div class="form-box">
+  <label>عنوان کار</label>
+  <input id="jobTitle" class="field" placeholder="مثلاً تعمیر کولر گازی">
 
-<h2>📋 ثبت درخواست</h2>
+  <label>دسته‌بندی</label>
+  <select id="jobCategory" class="field">
+    <option value="">انتخاب دسته‌بندی</option>
+    <option>تعمیرات</option>
+    <option>خدمات منزل</option>
+    <option>خودرو</option>
+    <option>کامپیوتر و موبایل</option>
+    <option>طراحی و تبلیغات</option>
+    <option>آموزش</option>
+    <option>حمل‌ونقل</option>
+    <option>سایر</option>
+  </select>
 
-<input id="name" type="text" placeholder="نام شما">
+  <label>توضیحات</label>
+  <textarea id="jobDesc" class="field" rows="4" placeholder="دقیقاً چه کاری لازم داری؟"></textarea>
 
-<input id="phone" type="tel" placeholder="شماره موبایل">
+  <label>شهر</label>
+  <input id="jobCity" class="field" placeholder="مثلاً تهران">
 
-<select id="category">
-<option value="">انتخاب دسته‌بندی</option>
-<option>تعمیرات</option>
-<option>ساختمان</option>
-<option>برنامه‌نویسی</option>
-<option>طراحی</option>
-<option>آموزش</option>
-<option>حمل و نقل</option>
-<option>خدمات منزل</option>
-<option>سایر خدمات</option>
-</select>
+  <label>بودجه تقریبی</label>
+  <input id="jobBudget" class="field" type="number" placeholder="مثلاً 500000">
 
-<textarea
-id="description"
-placeholder="چه کاری نیاز داری؟ درخواستت رو کامل توضیح بده..."
-></textarea>
-
-<button onclick="createRequest()">
-ثبت درخواست
-</button>
-
-<div id="success" class="success">
-✅ درخواستت با موفقیت ثبت شد.
-<br>
-راهینو به‌زودی مسیر مناسب انجام کارت رو پیدا می‌کنه.
-</div>
-
-</div>
-
+  <button class="primary" onclick="submitRequest()">🚀 ثبت درخواست</button>
+  <div id="success" class="success"></div>
+</section>
+<section class="section" id="specialists" style="display:none">
+  <h2>متخصص‌های پیشنهادی</h2>
+  <p style="color:#697386;font-size:13px;margin-top:-7px">بر اساس دسته‌بندی درخواستت این متخصص‌ها پیشنهاد شده‌اند.</p>
+  <div id="specialistList"></div>
 </section>
 
-<footer>
-راهینو — هر کاری داری، راهش رو پیدا کن
-<br>
-نسخه اولیه MVP
-</footer>
+
+
+<section class="cta" id="dealBox" style="display:none">
+  <h3>پیشنهاد متخصص</h3>
+  <div id="dealContent"></div>
+  <div style="display:flex;gap:9px;margin-top:14px">
+    <button class="primary" style="flex:1" onclick="acceptDeal()">✅ قبول پیشنهاد</button>
+    <button class="choose" style="flex:1;background:#eef1f6;color:#172033" onclick="rejectDeal()">رد پیشنهاد</button>
+  </div>
+  <div id="dealStatus" class="success"></div>
+</section>
+
+
+<section class="cta" id="chatBox" style="display:none">
+  <h3>💬 گفت‌وگو با متخصص</h3>
+  <div class="spec" style="margin:0 0 12px">
+    <div class="spec-name" id="chatName">متخصص راهینو</div>
+    <div class="spec-meta">وضعیت سفارش: <b id="orderStatus">در انتظار شروع</b></div>
+  </div>
+  <div id="messages" style="background:#f7f8fc;border-radius:14px;padding:10px;min-height:120px;margin-bottom:10px">
+    <div style="background:#fff;padding:10px;border-radius:11px;font-size:13px;margin-bottom:7px">
+      سلام 👋 من آماده‌ام کار رو شروع کنم.
+    </div>
+  </div>
+  <div style="display:flex;gap:7px">
+    <input id="chatInput" class="field" style="margin:0" placeholder="پیامت رو بنویس...">
+    <button class="primary" style="width:auto" onclick="sendMessage()">ارسال</button>
+  </div>
+  <button class="primary" style="margin-top:12px" onclick="startWork()">▶️ شروع انجام کار</button>
+</section>
+
+<section class="cta" id="ratingBox" style="display:none">
+  <h3>⭐ امتیازدهی</h3>
+  <p>کار انجام شد؟ تجربه‌ات رو ثبت کن.</p>
+  <div id="stars" style="font-size:30px;letter-spacing:4px;margin:12px 0">
+    <span onclick="rate(1)">☆</span><span onclick="rate(2)">☆</span><span onclick="rate(3)">☆</span><span onclick="rate(4)">☆</span><span onclick="rate(5)">☆</span>
+  </div>
+  <textarea id="review" class="field" rows="3" placeholder="نظرت درباره متخصص..."></textarea>
+  <button class="primary" style="margin-top:10px" onclick="submitRating()">ثبت امتیاز</button>
+  <div id="ratingStatus" class="success"></div>
+</section>
+
+
+
+<section class="cta" id="backendBox">
+  <h3>☁️ اتصال راهینو</h3>
+  <p>نسخه فعلی برای اتصال به دیتابیس واقعی آماده شده است.</p>
+  <div id="backendStatus" class="success" style="display:block">
+    🟡 حالت فعلی: <b>آماده اتصال</b><br>
+    اطلاعات حساب و درخواست‌ها فعلاً محلی هستند.
+  </div>
+</section>
+
+<section class="cta" id="accountBox">
+  <h3>👤 حساب راهینو</h3>
+  <p>برای استفاده از امکانات راهینو، نوع حساب و اطلاعات پایه را ثبت کن.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0">
+    <button id="customerBtn" class="primary" onclick="selectRole('مشتری')">🙋 مشتری</button>
+    <button id="expertBtn" class="choose" onclick="selectRole('متخصص')">🧰 متخصص</button>
+  </div>
+
+  <input id="fullName" class="field" placeholder="نام و نام خانوادگی">
+  <input id="phone" class="field" style="margin-top:9px" placeholder="شماره موبایل" inputmode="tel">
+  <input id="email" class="field" style="margin-top:9px" placeholder="ایمیل" type="email" autocomplete="email">
+  <input id="password" class="field" style="margin-top:9px" placeholder="رمز عبور (حداقل 6 کاراکتر)" type="password" autocomplete="new-password">
+
+  <div id="expertFields" style="display:none">
+    <select id="expertCategory" class="field" style="margin-top:9px">
+      <option value="">تخصص خودت را انتخاب کن</option>
+      <option>تعمیرات</option>
+      <option>خدمات منزل</option>
+      <option>خودرو</option>
+      <option>کامپیوتر و موبایل</option>
+      <option>طراحی و تبلیغات</option>
+      <option>آموزش</option>
+      <option>حمل‌ونقل</option>
+      <option>سایر</option>
+    </select>
+    <input id="expertCity" class="field" style="margin-top:9px" placeholder="شهر فعالیت">
+  </div>
+
+  <button class="primary" style="margin-top:12px" onclick="saveAccount()">ثبت حساب</button>
+  <div id="accountStatus" class="success"></div>
+</section>
+
+
+<section class="cta" id="dashboardBox">
+  <h3>📊 پنل من</h3>
+  <p id="dashboardWelcome">برای دیدن پنل، ابتدا حساب راهینو را ثبت کن.</p>
+  <div id="customerPanel" style="display:none">
+    <div class="spec"><div class="spec-name">درخواست‌های من</div>
+      <div class="spec-meta">درخواست‌های ثبت‌شده توسط تو اینجا نمایش داده می‌شوند.</div>
+      <div id="myRequests"></div>
+    </div>
+  </div>
+  <div id="expertPanel" style="display:none">
+    <div class="spec"><div class="spec-name">درخواست‌های مناسب شما</div>
+      <div class="spec-meta">درخواست‌های مرتبط با تخصص شما.</div>
+      <div id="expertRequests"></div>
+    </div>
+  </div>
+  <button class="choose" onclick="refreshDashboard()">🔄 بروزرسانی پنل</button>
+</section>
+
+
+<section class="cta" id="offerBox" style="display:none">
+  <h3>💰 پیشنهاد قیمت</h3>
+  <div id="offerRequestInfo"></div>
+  <input id="offerPrice" class="field" type="number" placeholder="قیمت پیشنهادی به تومان">
+  <textarea id="offerMessage" class="field" rows="3" style="margin-top:9px" placeholder="یک پیام کوتاه برای مشتری..."></textarea>
+  <button class="primary" style="margin-top:10px" onclick="sendOffer()">ارسال پیشنهاد</button>
+  <div id="offerStatus" class="success"></div>
+</section>
+
+<section class="cta" id="customerOffers" style="display:none">
+  <h3>📩 پیشنهادهای دریافتی</h3>
+  <div id="offersList"></div>
+</section>
+
+
+<section class="cta" id="orderFlow" style="display:none">
+  <h3>📦 وضعیت سفارش</h3>
+  <div id="orderFlowContent"></div>
+</section>
+
+<footer><strong>راهینو</strong>هر کاری داری، راهش رو پیدا کن<br>نسخه MVP — در حال توسعه 🚀</footer>
 
 <script>
-
-function search(){
-
-const value=document.getElementById("searchInput").value.trim();
-
-if(!value){
-alert("لطفاً کاری که نیاز داری را وارد کن.");
-return;
+function choose(name){document.getElementById('q').value=name;document.getElementById('q').focus()}
+function search(){let q=document.getElementById('q').value.trim();alert(q?'درخواست جستجو: '+q:'اول کاری که لازم داری را بنویس.')}
+function requestJob(){document.getElementById('requestBox').scrollIntoView({behavior:'smooth'})}
+function showSpecialists(category){
+  const data={
+    'تعمیرات':[
+      ['علی رضایی','تعمیرکار لوازم خانگی','⭐ 4.9','۱۸۷ کار انجام‌شده'],
+      ['مهدی کریمی','تعمیرات تخصصی کولر و پکیج','⭐ 4.8','۱۲۴ کار انجام‌شده'],
+      ['حسین احمدی','تعمیرکار سیار','⭐ 4.7','۹۶ کار انجام‌شده']
+    ],
+    'خدمات منزل':[
+      ['رضا محمدی','خدمات فنی و منزل','⭐ 4.9','۲۱۵ کار انجام‌شده'],
+      ['امیر حسینی','نظافت و خدمات منزل','⭐ 4.8','۱۵۲ کار انجام‌شده']
+    ],
+    'خودرو':[
+      ['سعید مرادی','مکانیک خودرو','⭐ 4.9','۲۸۳ کار انجام‌شده'],
+      ['مجتبی اکبری','برق و عیب‌یابی خودرو','⭐ 4.8','۱۹۱ کار انجام‌شده']
+    ],
+    'کامپیوتر و موبایل':[
+      ['پارسا نادری','تعمیرات موبایل و لپ‌تاپ','⭐ 4.9','۲۴۱ کار انجام‌شده'],
+      ['آرمان موسوی','شبکه و کامپیوتر','⭐ 4.8','۱۳۸ کار انجام‌شده']
+    ]
+  };
+  const fallback=[
+    ['محمد رضایی','متخصص '+category,'⭐ 4.8','۱۲۰ کار انجام‌شده'],
+    ['آرمان حسینی','متخصص '+category,'⭐ 4.7','۸۷ کار انجام‌شده'],
+    ['علی کریمی','متخصص '+category,'⭐ 4.6','۶۴ کار انجام‌شده']
+  ];
+  const list=data[category]||fallback;
+  document.getElementById('specialists').style.display='block';
+  document.getElementById('specialistList').innerHTML=list.map((s,i)=>`
+    <div class="spec">
+      <div class="spec-top"><div class="spec-name">${s[0]}</div><div class="rating">${s[2]}</div></div>
+      <div class="spec-meta">${s[1]} · ${s[3]}</div>
+      <button class="choose" onclick="chooseSpecialist('${s[0]}')">انتخاب متخصص</button>
+    </div>`).join('');
+}
+let selectedSpecialist='';
+function chooseSpecialist(name){
+  selectedSpecialist=name;
+  document.getElementById('dealBox').style.display='block';
+  document.getElementById('dealContent').innerHTML=
+    '<div class="spec" style="margin:0">'+
+    '<div class="spec-name">'+name+'</div>'+
+    '<div class="spec-meta">متخصص منتخب راهینو</div>'+
+    '<label>پیشنهاد قیمت متخصص</label>'+
+    '<div style="font-size:23px;font-weight:800;margin:8px 0">۵۸۰,۰۰۰ تومان</div>'+
+    '<div class="spec-meta">زمان تقریبی انجام: ۱ روز</div>'+
+    '<label>پیام متخصص</label>'+
+    '<div style="background:#f7f8fc;padding:12px;border-radius:11px;font-size:13px">سلام، درخواستت رو بررسی کردم. می‌تونم کار رو با این قیمت انجام بدم.</div>'+
+    '</div>';
+  document.getElementById('dealBox').scrollIntoView({behavior:'smooth'});
+}
+function acceptDeal(){
+  const box=document.getElementById('dealStatus');
+  box.style.display='block';
+  box.innerHTML='🎉 پیشنهاد '+selectedSpecialist+' با موفقیت پذیرفته شد.<br>حالا می‌تونی مستقیماً با متخصص در ارتباط باشی.';
+  document.getElementById('chatName').textContent=selectedSpecialist;
+  document.getElementById('chatBox').style.display='block';
+  document.getElementById('chatBox').scrollIntoView({behavior:'smooth'});
+}
+function rejectDeal(){
+  document.getElementById('dealStatus').style.display='none';
+  document.getElementById('dealBox').style.display='none';
+  alert('پیشنهاد رد شد. می‌توانی متخصص دیگری را انتخاب کنی.');
 }
 
-document.getElementById("description").value=value;
-
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
-});
-
+function submitRequest(){
+  const title=document.getElementById('jobTitle').value.trim();
+  const category=document.getElementById('jobCategory').value;
+  const desc=document.getElementById('jobDesc').value.trim();
+  const city=document.getElementById('jobCity').value.trim();
+  const budget=document.getElementById('jobBudget').value.trim();
+  if(!title||!category||!desc||!city){alert('لطفاً عنوان، دسته‌بندی، توضیحات و شهر را کامل کن.');return;}
+  let user=null; try{user=JSON.parse(localStorage.getItem('rahino_user')||'null')}catch(e){}
+  if(!user){alert('اول یک حساب راهینو ثبت کن.');document.getElementById('accountBox').scrollIntoView({behavior:'smooth'});return;}
+  const id='RH-'+Date.now().toString().slice(-6);
+  const request={id,title,category,desc,city,budget:budget||'توافقی',phone:user.phone,name:user.name,status:'در انتظار متخصص'};
+  const requests=getRequests(); requests.unshift(request);
+  localStorage.setItem('rahino_requests',JSON.stringify(requests));
+  const success=document.getElementById('success');
+  success.style.display='block';
+  success.innerHTML='✅ درخواستت با موفقیت ثبت شد.<br>کد درخواست: <b>'+id+'</b><br>متخصص‌های مناسب برایت پیدا شدند.';
+  showSpecialists(category);
+  document.getElementById('specialists').scrollIntoView({behavior:'smooth'});
+  refreshDashboard();
 }
-
-function selectCategory(category){
-
-document.getElementById("searchInput").value=category;
-
-document.getElementById("category").value=category;
-
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
-});
-
+function startWork(){
+  document.getElementById('orderStatus').textContent='در حال انجام';
+  document.getElementById('chatBox').innerHTML +=
+    '<div style="margin-top:12px;background:#ecfdf3;color:#16734a;padding:12px;border-radius:11px;font-size:13px">✅ کار شروع شد.</div>';
+  setTimeout(function(){
+    document.getElementById('orderStatus').textContent='انجام شد';
+    document.getElementById('ratingBox').style.display='block';
+    document.getElementById('ratingBox').scrollIntoView({behavior:'smooth'});
+  },1200);
 }
-
-function createRequest(){
-
-const name=document.getElementById("name").value.trim();
-const phone=document.getElementById("phone").value.trim();
-const category=document.getElementById("category").value;
-const description=document.getElementById("description").value.trim();
-
-if(!name || !phone || !category || !description){
-
-alert("لطفاً همه اطلاعات درخواست را کامل کن.");
-
-return;
-
+function rate(n){
+  currentRating=n;
+  document.querySelectorAll('#stars span').forEach((s,i)=>s.textContent=i<n?'★':'☆');
 }
-
-localStorage.setItem("rahino_request",JSON.stringify({
-name:name,
-phone:phone,
-category:category,
-description:description,
-date:new Date().toLocaleString("fa-IR")
-}));
-
-document.getElementById("success").style.display="block";
-
+function submitRating(){
+  if(!currentRating){alert('لطفاً اول امتیاز بده.');return;}
+  const status=document.getElementById('ratingStatus');
+  status.style.display='block';
+  status.innerHTML='⭐ ممنون! امتیاز <b>'+currentRating+'/5</b> برای متخصص ثبت شد.<br>بازخورد تو به بهتر شدن راهینو کمک می‌کند.';
 }
 
 </script>
 
-</body>
-</html>
+<script>
+
+let selectedRole='مشتری';
+function selectRole(role){
+  selectedRole=role;
+  const c=document.getElementById('customerBtn');
+  const e=document.getElementById('expertBtn');
+  if(role==='مشتری'){
+    c.style.background='#2563eb'; c.style.color='#fff';
+    e.style.background='#eef1f6'; e.style.color='#172033';
+    document.getElementById('expertFields').style.display='none';
+  }else{
+    e.style.background='#2563eb'; e.style.color='#fff';
+    c.style.background='#eef1f6'; c.style.color='#172033';
+    document.getElementById('expertFields').style.display='block';
+  }
+}
+function saveAccount(){
+  const name=document.getElementById('fullName').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  if(!name||!phone){alert('نام و شماره موبایل را وارد کن.');return;}
+  if(!/^09\d{9}$/.test(phone.replace(/\s/g,''))){
+    alert('شماره موبایل را به شکل 09xxxxxxxxx وارد کن.');return;
+  }
+  if(selectedRole==='متخصص'){
+    const cat=document.getElementById('expertCategory').value;
+    const city=document.getElementById('expertCity').value.trim();
+    if(!cat||!city){alert('تخصص و شهر فعالیت را کامل کن.');return;}
+  }
+  const user={role:selectedRole,name,phone};
+  if(selectedRole==='متخصص'){
+    user.category=document.getElementById('expertCategory').value;
+    user.city=document.getElementById('expertCity').value.trim();
+  }
+  localStorage.setItem('rahino_user',JSON.stringify(user));
+  const s=document.getElementById('accountStatus');
+  s.style.display='block';
+  s.innerHTML='✅ حساب راهینو ثبت شد.<br>خوش آمدی <b>'+name+'</b>!<br>نقش: '+selectedRole;
+}
+
+</script>
+
+
+<script>
+function getRequests(){
+  try{return JSON.parse(localStorage.getItem('rahino_requests')||'[]')}catch(e){return []}
+}
+function refreshDashboard(){
+  let user=null; try{user=JSON.parse(localStorage.getItem('rahino_user')||'null')}catch(e){}
+  const welcome=document.getElementById('dashboardWelcome');
+  const cp=document.getElementById('customerPanel'), ep=document.getElementById('expertPanel');
+  cp.style.display='none'; ep.style.display='none';
+  if(!user){welcome.textContent='برای دیدن پنل، ابتدا حساب راهینو را ثبت کن.';return;}
+  welcome.innerHTML='سلام <b>'+user.name+'</b> 👋 نقش شما: '+user.role;
+  const requests=getRequests();
+  if(user.role==='مشتری'){
+    cp.style.display='block';
+    const mine=requests.filter(r=>r.phone===user.phone);
+    document.getElementById('myRequests').innerHTML=mine.length
+      ? mine.map(r=>'<div style="border-top:1px solid #eee;padding:11px 0;font-size:13px"><b>'+r.title+'</b><br>'+r.category+' · '+r.city+'<br><span style="color:#2563eb">وضعیت: '+r.status+'</span><br><button class="choose" style="margin-top:8px" onclick="openOrderFlow(\''+r.id+'\')">📦 مدیریت سفارش</button></div>').join('')
+      : '<div style="color:#697386;font-size:13px;padding-top:10px">هنوز درخواستی ثبت نکرده‌ای.</div>';
+  }else{
+    ep.style.display='block';
+    const mine=requests.filter(r=>r.category===user.category && r.city===user.city);
+    document.getElementById('expertRequests').innerHTML=mine.length
+      ? mine.map(r=>'<div style="border-top:1px solid #eee;padding:11px 0;font-size:13px"><b>'+r.title+'</b><br>'+r.city+' · بودجه: '+r.budget+'<br><span style="color:#2563eb">متقاضی: '+r.name+'</span><br><button class="primary" style="margin-top:9px" onclick="openOffer(\''+r.id+'\')">💰 پیشنهاد قیمت</button> <button class="choose" style="margin-top:9px" onclick="openOrderFlow(\''+r.id+'\')">📦 وضعیت</button></div>').join('')
+      : '<div style="color:#697386;font-size:13px;padding-top:10px">فعلاً درخواست مرتبطی پیدا نشد.</div>';
+  }
+  if(user.role==='مشتری') showCustomerOffers();
+}
+window.addEventListener('load',refreshDashboard);
+</script>
+
+
+<script>
+function getOffers(){
+  try{return JSON.parse(localStorage.getItem('rahino_offers')||'[]')}catch(e){return []}
+}
+function saveOffers(list){localStorage.setItem('rahino_offers',JSON.stringify(list))}
+let activeRequestId=null;
+
+function openOffer(requestId){
+  activeRequestId=requestId;
+  const requests=getRequests();
+  const r=requests.find(x=>x.id===requestId);
+  if(!r)return;
+  document.getElementById('offerBox').style.display='block';
+  document.getElementById('offerRequestInfo').innerHTML=
+    '<div class="spec" style="margin:0 0 10px"><b>'+r.title+'</b><br><span class="spec-meta">'+r.category+' · '+r.city+'</span><br>'+r.desc+'</div>';
+  document.getElementById('offerBox').scrollIntoView({behavior:'smooth'});
+}
+function sendOffer(){
+  let user=null; try{user=JSON.parse(localStorage.getItem('rahino_user')||'null')}catch(e){}
+  const price=document.getElementById('offerPrice').value.trim();
+  const message=document.getElementById('offerMessage').value.trim();
+  if(!user||user.role!=='متخصص'){alert('برای ارسال پیشنهاد باید با حساب متخصص وارد شده باشی.');return;}
+  if(!price){alert('قیمت پیشنهادی را وارد کن.');return;}
+  const offers=getOffers();
+  offers.unshift({
+    id:'OF-'+Date.now().toString().slice(-6),
+    requestId:activeRequestId,
+    expert:user.name,
+    expertPhone:user.phone,
+    price:price,
+    message:message||'آماده انجام این کار هستم.',
+    status:'منتظر پاسخ مشتری'
+  });
+  saveOffers(offers);
+  const requests=getRequests();
+  const i=requests.findIndex(x=>x.id===activeRequestId);
+  if(i>=0) requests[i].status='پیشنهاد دریافت شد';
+  localStorage.setItem('rahino_requests',JSON.stringify(requests));
+  document.getElementById('offerStatus').style.display='block';
+  document.getElementById('offerStatus').innerHTML='✅ پیشنهادت برای مشتری ارسال شد.';
+  refreshDashboard();
+}
+function showCustomerOffers(){
+  let user=null; try{user=JSON.parse(localStorage.getItem('rahino_user')||'null')}catch(e){}
+  if(!user||user.role!=='مشتری')return;
+  const requests=getRequests().filter(r=>r.phone===user.phone);
+  const ids=requests.map(r=>r.id);
+  const offers=getOffers().filter(o=>ids.includes(o.requestId));
+  const box=document.getElementById('customerOffers');
+  box.style.display='block';
+  const list=document.getElementById('offersList');
+  list.innerHTML=offers.length ? offers.map(o=>
+    '<div class="spec"><div class="spec-top"><div class="spec-name">'+o.expert+'</div><div class="rating">💰 '+Number(o.price).toLocaleString('fa-IR')+' تومان</div></div>'+
+    '<div class="spec-meta">'+o.message+'</div>'+
+    '<button class="primary" onclick="acceptOffer(\''+o.id+'\')">قبول پیشنهاد</button></div>'
+  ).join('') : '<div class="spec-meta">هنوز پیشنهادی دریافت نشده.</div>';
+}
+function acceptOffer(offerId){
+  const offers=getOffers();
+  const i=offers.findIndex(o=>o.id===offerId);
+  if(i<0)return;
+  offers[i].status='پذیرفته شد';
+  saveOffers(offers);
+  const requests=getRequests();
+  const r=requests.find(x=>x.id===offers[i].requestId);
+  if(r)r.status='متخصص انتخاب شد';
+  localStorage.setItem('rahino_requests',JSON.stringify(requests));
+  alert('🎉 پیشنهاد '+offers[i].expert+' پذیرفته شد.');
+  showCustomerOffers();
+  refreshDashboard();
+}
+</script>
+
+
+<script>
+function updateRequestStatus(requestId,status){
+  const requests=getRequests();
+  const i=requests.findIndex(r=>r.id===requestId);
+  if(i<0)return;
+  requests[i].status=status;
+  localStorage.setItem('rahino_requests',JSON.stringify(requests));
+  refreshDashboard();
+}
+function openOrderFlow(requestId){
+  const r=getRequests().find(x=>x.id===requestId);
+  if(!r)return;
+  const box=document.getElementById('orderFlow');
+  const content=document.getElementById('orderFlowContent');
+  box.style.display='block';
+  let actions='';
+  if(r.status==='متخصص انتخاب شد')
+    actions='<button class="primary" onclick="changeOrder(\''+r.id+'\',\'در حال انجام\')">▶️ شروع کار</button>';
+  else if(r.status==='در حال انجام')
+    actions='<button class="primary" onclick="changeOrder(\''+r.id+'\',\'منتظر تأیید مشتری\')">✅ اعلام اتمام کار</button>';
+  else if(r.status==='منتظر تأیید مشتری')
+    actions='<button class="primary" onclick="changeOrder(\''+r.id+'\',\'تکمیل شد\')">✅ تأیید و تکمیل سفارش</button>';
+  else if(r.status==='تکمیل شد')
+    actions='<div class="success" style="display:block">🎉 سفارش با موفقیت تکمیل شد. ممنون که از راهینو استفاده کردی.</div>';
+  content.innerHTML=
+    '<div class="spec" style="margin:0"><div class="spec-name">'+r.title+'</div>'+
+    '<div class="spec-meta">'+r.category+' · '+r.city+'</div>'+
+    '<div style="margin:12px 0;font-weight:700">وضعیت: <span style="color:#2563eb">'+r.status+'</span></div>'+
+    actions+'</div>';
+  box.scrollIntoView({behavior:'smooth'});
+}
+function changeOrder(requestId,status){
+  updateRequestStatus(requestId,status);
+  openOrderFlow(requestId);
+}
+</script>
+
+
+<script>
+/*
+  RAHINO BACKEND CONFIG
+  بعد از ساخت پروژه Supabase فقط این دو مقدار عمومی را وارد کن.
+  هرگز service_role key یا رمز عبور را داخل این فایل قرار نده.
+*/
+const RAHINO_CONFIG = {
+  supabaseUrl: 'https://wchyapcsegnnlcfiuqai.supabase.co',
+  supabasePublishableKey: 'sb_publishable_YZ-yiLdVrWeiM9rpIkNdkw_TQSUOG3x'
+};
+
+const rahinoSupabase = window.supabase.createClient(
+  RAHINO_CONFIG.supabaseUrl,
+  RAHINO_CONFIG.supabasePublishableKey
+);
+
+function rahinoBackendReady(){
+  return Boolean(RAHINO_CONFIG.supabaseUrl && RAHINO_CONFIG.supabasePublishableKey);
+}
+async function showBackendStatus(){
+  const el=document.getElementById('backendStatus');
+  if(!el)return;
+  if(!rahinoBackendReady()){
+    el.innerHTML='🔴 تنظیمات اتصال کامل نیست.';
+    return;
+  }
+  try{
+    const { data: { session } } = await rahinoSupabase.auth.getSession();
+    if(session){
+      el.innerHTML='🟢 <b>راهینو به Supabase وصل است.</b><br>جلسه کاربر فعال است.';
+    }else{
+      el.innerHTML='🟢 <b>اتصال به Supabase برقرار است.</b><br>برای ثبت حساب، ایمیل و رمز عبور وارد کن.';
+    }
+  }catch(e){
+    el.innerHTML='🔴 اتصال برقرار نشد.<br><small>'+String(e.message||e)+'</small>';
+  }
+}
+window.addEventListener('load',showBackendStatus);
+</script>
