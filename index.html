@@ -335,7 +335,20 @@ async function submitRequest(){
   const id='RH-'+Date.now().toString().slice(-6);
   const request={id,title,category,desc,city,budget:budget||'توافقی',phone:user.phone,name:user.name,status:'در انتظار متخصص'};
   const requests=getRequests(); requests.unshift(request);
-  localStorage.setItem('rahino_requests',JSON.stringify(requests));
+  const {data:{user:authUser}}=await rahinoSupabase.auth.getUser();
+if(!authUser){alert('ابتدا وارد حساب شوید');return;}
+const {error}=await rahinoSupabase.from('requests').insert({
+customer_id:authUser.id,
+title:title,
+description:desc,
+category:category,
+city:city,
+budget:budget||null,
+status:'در انتظار متخصص',
+name:user.name,
+phone:user.phone
+});
+if(error){alert('خطا در ثبت درخواست: '+error.message);return;}
   const success=document.getElementById('success');
   success.style.display='block';
   success.innerHTML='✅ درخواستت با موفقیت ثبت شد.<br>کد درخواست: <b>'+id+'</b><br>متخصص‌های مناسب برایت پیدا شدند.';
