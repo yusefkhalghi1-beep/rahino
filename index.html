@@ -323,7 +323,7 @@ function rejectDeal(){
   alert('پیشنهاد رد شد. می‌توانی متخصص دیگری را انتخاب کنی.');
 }
 
-function submitRequest(){
+async function submitRequest(){
   const title=document.getElementById('jobTitle').value.trim();
   const category=document.getElementById('jobCategory').value;
   const desc=document.getElementById('jobDesc').value.trim();
@@ -383,7 +383,8 @@ function selectRole(role){
     document.getElementById('expertFields').style.display='block';
   }
 }
-function saveAccount(){
+async function saveAccount(){
+
   const name=document.getElementById('fullName').value.trim();
   const phone=document.getElementById('phone').value.trim();
   if(!name||!phone){alert('نام و شماره موبایل را وارد کن.');return;}
